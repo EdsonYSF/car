@@ -1,0 +1,17 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: car-customer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        prefix: car-customer
+  profiles:
+    active: dev

@@ -1,0 +1,15 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /auth
+spring:
+  application:
+    name: car-sso
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+  profiles:
+    active: dev
