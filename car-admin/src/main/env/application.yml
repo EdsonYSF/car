@@ -50,3 +50,9 @@ spring:
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5673
+    username: root
+    password: root
+    virtual-host: JCcccHost
