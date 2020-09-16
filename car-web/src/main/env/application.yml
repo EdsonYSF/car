@@ -62,5 +62,7 @@ security:
     resource:
       userInfoUri: ${auth-server}/user
 
+
+#热点抓取地址
 douban:
   url: http://top.baidu.com/buzz?b=341&fr=topindex

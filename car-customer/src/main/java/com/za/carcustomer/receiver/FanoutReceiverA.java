@@ -1,4 +1,4 @@
-package com.za.caradmin.controller;
+package com.za.carcustomer.receiver;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -9,11 +9,12 @@ import java.util.Map;
  * @create 2020/9/10 16:27
  */
 @Component
-@RabbitListener(queues = "fanout.B")
-public class FanoutReceiverB {
+@RabbitListener(queues = "fanout.A")
+public class FanoutReceiverA {
 
     @RabbitHandler
     public void process(Map testMessage) {
-        System.out.println("FanoutReceiverB消费者收到消息  : " +testMessage.toString());
+        System.out.println("FanoutReceiverA消费者收到消息  : " +testMessage.toString());
     }
+
 }
