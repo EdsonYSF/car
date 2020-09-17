@@ -2,6 +2,7 @@ package com.za.carweb.controller;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -12,6 +13,7 @@ import java.util.UUID;
 /**
  * @outhor YSF
  * @create 2020/9/10 16:13
+ * RabbitMQ 生产者
  */
 @RestController
 public class SendMessageController {
@@ -23,7 +25,7 @@ public class SendMessageController {
      * 推送普通消息
      * @return
      */
-//    @Scheduled(cron = "0/60 * * * * MON-SAT")
+    @Scheduled(cron = "0/60 * * * * MON-SAT")
     public void sendDirectMessage() {
         String messageId = String.valueOf(UUID.randomUUID());
         String messageData = "RabbitMq 推送普通消息";

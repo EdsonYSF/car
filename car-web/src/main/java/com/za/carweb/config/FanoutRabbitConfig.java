@@ -5,6 +5,7 @@ import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.core.Queue;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,6 +17,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FanoutRabbitConfig {
 
+    @Value("${queueConfig.sectorNameA}")
+    private String sectorNameA;
+
+    @Value("${queueConfig.sectorNameB}")
+    private String sectorNameB;
+
+    @Value("${queueConfig.sectorNameC}")
+    private String sectorNameC;
+
+
     /**
      *  创建三个队列 ：fanout.A   fanout.B  fanout.C
      *  将三个队列都绑定在交换机 fanoutExchange 上
@@ -23,17 +34,17 @@ public class FanoutRabbitConfig {
      */
     @Bean
     public Queue queueA() {
-        return new Queue("fanout.A");
+        return new Queue(sectorNameA);
     }
 
     @Bean
     public Queue queueB() {
-        return new Queue("fanout.B");
+        return new Queue(sectorNameB);
     }
 
     @Bean
     public Queue queueC() {
-        return new Queue("fanout.C");
+        return new Queue(sectorNameC);
     }
 
     @Bean

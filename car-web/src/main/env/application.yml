@@ -63,6 +63,18 @@ security:
       userInfoUri: ${auth-server}/user
 
 
+queueConfig:
+  #队列名称
+  queueName: TestDirectQueue
+  # 交换机名称
+  switchName: TestDirectExchange
+  #扇形队列名称
+  sectorNameA: fanout.A
+  sectorNameB: fanout.B
+  sectorNameC: fanout.C
+
+
+
 #热点抓取地址
 douban:
   url: http://top.baidu.com/buzz?b=341&fr=topindex

@@ -8,6 +8,7 @@ import org.springframework.amqp.core.TopicExchange;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 /**
  * @outhor YSF
  * @create 2020/9/10 16:20
