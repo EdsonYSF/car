@@ -10,6 +10,7 @@ import java.security.Principal;
 
 @Controller
 public class InfoController {
+
     @GetMapping("/getUser")
     public ResponseEntity<Object> userPage(Principal principal) {
         return new ResponseEntity<Object>(principal, HttpStatus.OK);

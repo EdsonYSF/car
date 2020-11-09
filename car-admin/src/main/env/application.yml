@@ -24,8 +24,6 @@ redis:
 auth-server: http://localhost:9090/auth
 
 security:
-  basic:
-    enabled: false
   oauth2:
     client:
       clientId: handleCilentId

@@ -16,9 +16,6 @@ public class HealthController {
     @Value("${service.name}")
     public String name;
 
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
-
     /**
      * 健康检查
      *
@@ -27,13 +24,6 @@ public class HealthController {
     @RequestMapping(value = "/healthCheck", method = RequestMethod.GET)
     public String health() {
         return name;
-    }
-
-
-    @RequestMapping("/redisHandler")
-    public String redisHandler() {
-        stringRedisTemplate.opsForValue().set("k5", "Springboot redis");
-        return stringRedisTemplate.opsForValue().get("k5");
     }
 
 }
