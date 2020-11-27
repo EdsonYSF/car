@@ -24,6 +24,7 @@
         <module>../car-toolbox</module>
         <module>../car-gw</module>
         <module>../car-sso</module>
+        <module>../car-wechat</module>
     </modules>
 
     <properties>

@@ -2,7 +2,6 @@ package com.za.carweb.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.za.carweb.mondel.ExeclMondel;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
@@ -27,18 +26,18 @@ public class ExeclPoiController {
 
 
 
-    public static void main(String[] args) throws IOException, ParseException {
-
-        String  sp="[{code=112, name=客户需求分析问卷, customerName=null, customerType=null, certType=null, certNo=null, maxNum=3, minNum=1, subType=111251, imagePathList=[{url=/api/data/downloadImage?url=8740871023200865906.png}]}]";
-
-        JSONObject json = JSONObject.fromObject(sp);
-
-//        com.alibaba.fastjson.JSONArray json = JSONArray.parseArray(sp);
-//        List<JSONObject> list = new ArrayList<JSONObject>();
-        ObjectMapper mapper = new ObjectMapper();
-        JSONObject list = mapper.readValue(sp,JSONObject.class);
-
-        System.out.println(list);
+//    public static void main(String[] args) throws IOException, ParseException {
+//
+//        String  sp="[{code=112, name=客户需求分析问卷, customerName=null, customerType=null, certType=null, certNo=null, maxNum=3, minNum=1, subType=111251, imagePathList=[{url=/api/data/downloadImage?url=8740871023200865906.png}]}]";
+//
+//        JSONObject json = JSONObject.fromObject(sp);
+//
+////        com.alibaba.fastjson.JSONArray json = JSONArray.parseArray(sp);
+////        List<JSONObject> list = new ArrayList<JSONObject>();
+//        ObjectMapper mapper = new ObjectMapper();
+//        JSONObject list = mapper.readValue(sp,JSONObject.class);
+//
+//        System.out.println(list);
 
 
 //        XSSFWorkbook book = new XSSFWorkbook("/Users/ysf/Downloads/工作簿1.xlsx");
@@ -68,7 +67,22 @@ public class ExeclPoiController {
 //        JSONArray execlJsonArray=JSONArray.fromObject(list);
 //        System.out.println(execlJsonArray);
 
+//    }
+
+
+
+    public static void main(String[] args) {
+        method(null);
     }
+
+    public static void method(Object o) {
+        System.out.println("Object method");
+    }
+
+    public static void method(String s) {
+        System.out.println("String method");
+    }
+
 
 
 
